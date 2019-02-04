@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Background Colour Change</string>
+    <string name="app_name">Ramadan Reminders</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Click</string>
 </resources>
