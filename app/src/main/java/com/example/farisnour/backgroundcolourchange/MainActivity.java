@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity {
         LocalDate today = LocalDate.now();
         LocalDate ramadan = LocalDate.of(2019, 5, 6);
 
-        int difference = today.getDayOfYear() - ramadan.getDayOfYear();
+        int difference = ramadan.getDayOfYear() - today.getDayOfYear();
 
         String message;
-        if (difference < 0) {
-            message = "There are " + (difference * -1) + " days until Ramadan :)";
+        if (difference > 0) {
+            message = "There are " + difference + " days until Ramadan :)";
         }
-        else if (difference >= 0 || difference < 30) {
+        else if (difference > -30 || difference <= 0) {
             message = "Woohoo it's Ramadan!";
         }
         else {
