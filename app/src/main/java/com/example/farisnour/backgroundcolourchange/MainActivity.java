@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             message = "There are " + difference + " days until Ramadan :)";
         }
         else if (difference > -30 || difference <= 0) {
-            message = "Woohoo it's Ramadan!";
+            message = "Day " + (1 - difference) + " of Ramadan";
         }
         else {
             message = "Ramadan is now over :(";
