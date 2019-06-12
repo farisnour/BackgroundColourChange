@@ -26,26 +26,28 @@ public class MainActivity extends AppCompatActivity {
 //        EditText editText = (EditText) findViewById(R.id.editText);
         TextView textView = findViewById(R.id.viewText);
 
-        LocalDate today = LocalDate.now();
-        LocalDate ramadan = LocalDate.of(2019, 5, 6);
-
-        int difference = ramadan.getDayOfYear() - today.getDayOfYear();
-
-        String message;
-        if (difference > 0) {
-            message = "There are " + difference + " days until Ramadan :)";
-        }
-        else if (difference > -30 || difference <= 0) {
-            message = "Day " + (1 - difference) + " of Ramadan";
-        }
-        else {
-            message = "Ramadan is now over :(";
-        }
+        String message = getMessage(LocalDate.now());
 
         textView.setText(message);
 //        intent.putExtra(EXTRA_MESSAGE, "RamadanDate: " + ramadan.format(DateTimeFormatter.ISO_LOCAL_DATE) + "\ncurrent date: " + today.format(DateTimeFormatter.ISO_LOCAL_DATE) + "\ndifference: " + difference);
 //        intent.putExtra("com.example.farisnour.MESSAGE2", message);
 //        startActivity(intent);
+    }
+
+    public static String getMessage(LocalDate today) {
+        LocalDate ramadan = LocalDate.of(2019, 5, 6);
+
+        int difference = ramadan.getDayOfYear() - today.getDayOfYear();
+
+        if (difference > 0) {
+            return "There are " + difference + " days until Ramadan :)";
+        }
+        else if (difference > -30 && difference <= 0) {
+            return "Day " + (1 - difference) + " of Ramadan";
+        }
+        else {
+            return "Ramadan is now over :(";
+        }
     }
 
 }
